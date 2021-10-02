@@ -1,32 +1,28 @@
 my_list1 = []
-my_list2 = []
-my_list3 = []
-my_list4 = []
 for i in range(1000):
     if i % 2 != 0:
         my_list1.append(i**3) #создание списка кубов нечетных чисел
 print(my_list1)
+result = 0
 for number in my_list1:
-    x = 0
+    summ = 0
     num = number
     while (num != 0):
-        x = x + num % 10
+        summ = summ + num % 10
         num = num // 10
-    if x % 7 == 0:
-        my_list2.append(number)
-    result = sum(my_list2) #cумма чисел кратных 7
+    if summ % 7 == 0:
+        result = result + number #cумма чисел с цифрами кратными 7
 print(result)
 
-for el in my_list1:
-    my_list3.append(el+17)
-print(my_list3)
-for number in my_list3:
-    y = 0
+resultb = 0
+for el in range(len(my_list1)):
+    my_list1[el] = my_list1[el] + 17
+for number in my_list1:
+    summ = 0
     num = number
     while (num != 0):
-        y = y + num % 10
+        summ = summ + num % 10
         num = num // 10
-    if y % 7 == 0:
-        my_list4.append(number)
-    result = sum(my_list4) #cумма чисел кратных 7
-print(result)
+    if summ % 7 == 0:
+        resultb = resultb + number #cумма чисел с цифрами кратными 7 с +17
+print(resultb)
