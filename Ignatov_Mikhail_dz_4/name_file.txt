@@ -1,0 +1,44 @@
+    #проверяем наличие пакета pillow
+
+pip show pillow
+WARNING: Package(s) not found: pillow
+
+    #устанавливаем пакет pillow
+pip install pillow
+Installing collected packages: pillow
+Successfully installed pillow-8.3.2
+    #проверяем наличие пакета pillow
+
+pip show pillow
+Name: Pillow
+Version: 8.3.2
+Summary: Python Imaging Library (Fork)
+Home-page: https://python-pillow.org
+Author: Alex Clark (PIL Fork Author)
+Author-email: aclark@python-pillow.org
+License: HPND
+Location: c:\users\choli\appdata\local\programs\python\python39\lib\site-packages
+Requires:
+Required-by:
+
+    #создаем виртуальное окружение
+python -m venv virt
+
+    #активируем виртуальное окружение
+virt\scripts\activate.bat
+
+    #проверяем наличие пакета pillow
+pip show pillow
+WARNING: Package(s) not found: pillow
+
+    #устанавливаем пакет pillow 7.1.1
+pip install pillow 7.1.1
+Collecting pillow
+  Using cached Pillow-8.3.2-cp39-cp39-win_amd64.whl (3.2 MB)
+ERROR: Could not find a version that satisfies the requirement 7.1.1 (from versions: none)
+ERROR: No matching distribution found for 7.1.1
+    #не поставилось
+
+    #деактивируем виртуальное окружение
+(virt) C:\Users\Choli\PycharmProjects\GB_Homework_Python_1\GB_Homework_Python_1\Ignatov_Mikhail_dz_4>deactivate
+C:\Users\Choli\PycharmProjects\GB_Homework_Python_1\GB_Homework_Python_1\Ignatov_Mikhail_dz_4>
