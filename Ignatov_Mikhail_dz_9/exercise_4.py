@@ -32,9 +32,10 @@ class TownCar(Car):
             print(f'speed: {self.speed}')
 
 class SportCar(Car):
+    pass
 
-    def __init__(self, speed, color, name, is_police):
-        super(SportCar, self).__init__(speed, color, name, is_police)
+    # def __init__(self, speed, color, name, is_police):
+    #     super(SportCar, self).__init__(speed, color, name, is_police)
 
 class WorkCar(Car):
 
