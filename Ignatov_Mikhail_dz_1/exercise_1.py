@@ -19,7 +19,7 @@ duration = int(input('Введите продолжительность врем
 days = duration // 86400 # дни - целочисленное деление на 24*3600
 hours = (duration % 86400) // 3600 # часы - целочисленное деление на 3600
 minutes = (duration % 3600) // 60 # минуты - целочисленное деление на 60
-seconds = duration % 60 # секунды - остаток от еления на 60
+seconds = duration % 60 # секунды - остаток от деления на 60
 
 if duration < 60:
     print(f'{seconds} сек.')
@@ -29,6 +29,5 @@ elif duration >= 3600 and duration < 86400:
     print(f'{hours} час. {minutes} мин. {seconds} сек.')
 elif duration >= 86400:
     print(f'{days} дн. {hours} час. {minutes} мин. {seconds} сек.')
-
 else:
     print('end')
