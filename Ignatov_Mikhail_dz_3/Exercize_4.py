@@ -1,20 +1,30 @@
-def dict_sort(dict):
-    sorted_dict = {}
-    for el in sorted(dict):
-        sorted_dict[el] = dict[el]
-    return sorted_dict
+"""* (вместо задачи 3) Написать функцию thesaurus_adv(), принимающую в качестве аргументов строки
+в формате «Имя Фамилия» и возвращающую словарь, в котором ключи — первые буквы фамилий,
+а значения — словари, реализованные по схеме предыдущего задания и содержащие записи,
+в которых фамилия начинается с соответствующей буквы. Например:
+>>>thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева")
+{
+    "А": {
+        "П": ["Петр Алексеев"]
+    },
+    "С": {
+        "И": ["Иван Сергеев", "Инна Серова"],
+        "А": ["Анна Савельева"]
+    }
+}
+Как поступить, если потребуется сортировка по ключам?"""
+full_names = ["Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"]
 
 
-def thesaurus_adv(*full_names):
-    dict_1 = {}
-    for full_name in full_names:
-        name, last_name = full_name.split()
-        dict_1.setdefault(last_name[0], {})
-        dict_1[last_name[0]].setdefault(name[0], [])
-        dict_1[last_name[0]][name[0]].append(full_name)
+def thesaurus_adv(*list: str) -> dict:
+    my_dict = {}  # результат словарь
+    for el in full_names:
+        name, last_name = el.split()  # name, last name
+        my_dict.setdefault(last_name[0], {})
+        my_dict[last_name[0]].setdefault(name[0], [])
+        my_dict[last_name[0]][name[0]].append(el)
+        sorted_tuple = sorted(my_dict.items(), key=lambda x: x[0])
+    return dict(sorted_tuple)
 
 
-    return dict_sort(dict_1)
-
-
-print(thesaurus_adv("Иван Сергеев", "Инна Серова", "Петр Алексеев", "Илья Иванов", "Анна Савельева"))
+print(thesaurus_adv(full_names))

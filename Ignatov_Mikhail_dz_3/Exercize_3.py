@@ -1,18 +1,24 @@
-def thesaurus(*names):
-    dict_1 = {}
-    for name in names:
-        dict_1.setdefault(name[0], [])
-        dict_1[name[0]].append(name)
-    return sorted(dict_1.items(), key=lambda t: t[0])
-# посмотрел в документации сортировку по ключам, но вообще не понимаю механизм.
-# без лямбды делал бы через пустой словарь
-#     sorted_dict = {}
-#     for el in sorted(dict_1):
-#         sorted_dict[el] = dict_1[el]
-#     return sorted_dict
+"""Написать функцию thesaurus(), принимающую в качестве аргументов имена сотрудников и
+возвращающую словарь, в котором ключи — первые буквы имён, а значения — списки,
+содержащие имена, начинающиеся с соответствующей буквы. Например:
+>>> thesaurus("Иван", "Мария", "Петр", "Илья")
+{
+"И": ["Иван", "Илья"],
+"М": ["Мария"],
+"П": ["Петр"]
+}
+Подумайте: полезен ли будет вам оператор распаковки? Как поступить, если потребуется
+сортировка по ключам? Можно ли использовать словарь в этом случае?"""
+
+names = ["Иван", "Анна", "Мария", "Петр", "Илья"]
+
+def thesaurus(*list: list) -> dict:
+    my_dict = {}
+    for el in names:
+        my_dict.setdefault(el[0], [])
+        my_dict[el[0]].append(el)
+    sorted_tuple = sorted(my_dict.items(), key=lambda x: x[0])
+    return dict(sorted_tuple)
 
 
-
-print(thesaurus('Мария', 'Иван', 'Петр', 'Илья', 'Рита', 'Павел'))
-
-
+print(thesaurus(names))
